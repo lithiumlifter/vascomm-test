@@ -1,0 +1,211 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.heading-text{
+    font-size: 18px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    width: 250px;
+    transition: all 0.3s ease;
+    transform: translateX(-250px); /* Initially hidden */
+    margin-top: 60px;
+    padding-top: 18px;
+}
+.sidebar.show {
+    transform: translateX(0); /* Show when toggled */
+}
+.sidebar a {
+    color: black;
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+}
+.sidebar a.active, .sidebar a:hover {
+    background-color: #41A0E4;
+    color: white;
+}
+
+.menu-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right .greeting {
+    font-size: 10px;
+    color: #56a6e0; /* Light blue color for "Hallo Admin," */
+}
+
+.header-right .username {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000; /* Black color for the name */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right .me-3 {
+    text-align: right;
+}
+
+.rounded-circle {
+    background-color: #ccc; /* Gray background for the circle */
+}
+
+/* Content styles */
+.content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+.content.shifted {
+    margin-left: 250px; /* When sidebar is visible */
+}
+
+/* Navbar and toggler */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-brand img{
+    width: 110px;
+    margin-left: 91px;
+}
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+/* Make the sidebar fixed on desktop and hidden on smaller screens */
+@media (min-width: 992px) {
+    .sidebar {
+        transform: translateX(0); /* Always visible on larger screens */
+    }
+    .content {
+        margin-left: 250px; /* Shift content to the right */
+    }
+}
+
+        /* Custom card style */
+        .custom-card {
+            position: relative;
+            background: linear-gradient(to left, #C2D6FF, #ADC9FF);
+            border-radius: 16px;
+            padding: 20px;
+            color: #2c3e50;
+            text-align: left;
+            overflow: hidden; /* Ensure circles don't overflow outside the card */
+            min-width: 260px;
+            min-height: 117px;
+        }
+
+        /* Pseudo-element for background circles */
+        .custom-card::before, .custom-card::after {
+            content: "";
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 80px; /* Adjust size as needed */
+            height: 80px; /* Adjust size as needed */
+        }
+
+        /* Positioning for both circles in bottom-right corner */
+        .custom-card::before {
+            bottom: 0; /* Align to bottom */
+            right: 0; /* Align to right */
+            transform: translate(50%); /* Shift to overlap */
+        }
+
+        .custom-card::after {
+            bottom: 0; /* Align to bottom */
+            right: 0; /* Align to right */
+            transform: translate(30%, 30%); /* Adjust position to overlap */
+        }
+
+        /* Text styles */
+        .custom-card h5 {
+            font-size: 14px;
+            font-weight: 400;
+            color: #7b8a8b;
+            margin-bottom: 5px;
+        }
+        .custom-card .display-6 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0;
+        }
+.card{
+    border: 0px;
+}
+
+.card-column{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card-table{
+    width: 784px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tb-title{
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 22px;
+    padding-left: 30px;
+}
+
+#tb-dashboard{
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 30px;
+}
+
+.table-primary{
+    background-color: #41A0E4 !important;
+    color: white !important;
+}
+
+.tb-border-right{
+    border-radius: 0 6px 6px 0;
+}
+
+.tb-border-left{
+    border-radius: 6px 0 0 6px;
+}
+
+.dropdown-dashbord{
+    width: 220px;
+    height: 214px;
+}
+
+.logout-username{
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.logout-email{
+    font-size: 10px;
+    font-weight: 400px;
+}
+
