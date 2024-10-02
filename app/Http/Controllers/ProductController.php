@@ -25,7 +25,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'status' => 'required|in:active,pending',
+            'status' => 'required|in:active,inactive',
         ]);
 
         $imagePath = $request->file('image')->store('products', 'public');
@@ -56,7 +56,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'status' => 'required|in:active,pending',
+            'status' => 'required|in:active,inactive',
         ]);
 
         $data = [
@@ -84,7 +84,7 @@ class ProductController extends Controller
 
     public function toggleStatus(Product $product)
     {
-        $product->status = $product->status === 'active' ? 'pending' : 'active';
+        $product->status = $product->status === 'active' ? 'inactive' : 'active';
         $product->save();
 
         return redirect()->route('manage-product')->with('success', 'Product status updated successfully!');

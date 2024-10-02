@@ -67,7 +67,7 @@
         </div>
     </div>
     
-    <div class="card">
+    <div class="card card-table-large">
         <div class="card-body">
             <table id="data-table" class="table table-striped">
                 <thead>
@@ -90,20 +90,25 @@
                             <td>
                                 @if ($user->status === 'active')
                                     <span class="badge rounded-pill bg-success">{{ $user->status }}</span>
-                                @elseif ($user->status === 'pending')
+                                @elseif ($user->status === 'inactive')
                                     <span class="badge rounded-pill bg-danger">{{ $user->status }}</span>
                                 @else
                                     
                                 @endif
                             </td>
                             <td>
-                                <form action="{{ route('toggle-user-status', $user->id) }}" method="POST" style="display: inline;">
+                                <form action="#" method="POST" style="display: inline;">
                                     @csrf
                                     <button type="submit" class="icon-action text-white bg-success" title="Lihat">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </form>
-                                
+                                <form action="{{ route('toggle-user-status', $user->id) }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    <button type="submit" class="icon-action text-white bg-primary" title="Toggle Status">
+                                        <i class="fas fa-sync"></i>
+                                    </button>
+                                </form>
                                 <button class="icon-action text-white bg-warning ms-2" title="Edit" data-bs-toggle="modal" data-bs-target="#editUserModal-{{ $user->id }}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </button>

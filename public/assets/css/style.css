@@ -144,7 +144,9 @@ footer .container{
 }
 
 .icon-socmed img{
-    width: 20px;
+    width: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 footer h6 {
@@ -173,16 +175,6 @@ footer p {
     color: #888;
     font-size: 0.9rem;
   }
-
-/* .btn-primary {
-    background-color: #1c73e8;
-    border: none;
-  }
-
-.btn-primary:hover {
-    background-color: #155bb5;
-
-  } */
 
   .carousel-control-prev-icon,
   .carousel-control-next-icon {

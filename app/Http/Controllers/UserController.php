@@ -80,7 +80,7 @@ class UserController extends Controller
 
     public function toggleStatus(User $user)
     {
-        $user->status = $user->status === 'active' ? 'pending' : 'active';
+        $user->status = $user->status === 'active' ? 'inactive' : 'active';
         $user->save();
 
         return redirect()->route('manage-user')->with('success', 'User status updated successfully!');

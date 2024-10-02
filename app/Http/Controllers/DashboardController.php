@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index()
     {
         // Fetch the latest 5 products
-        $products = Product::latest()->take(5)->get();
+        $products = Product::latest()->take(10)->get();
     
         // Count various statistics
         $totalUsers = User::count();

@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="menu-navbar container-fluid d-flex align-items-center">
         <button class="navbar-toggler" type="button" id="sidebarToggle">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('landingpage') }}">
             <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
         </a>
         <div class="header-right ms-auto d-flex align-items-center">
             <div class="me-3 text-end">
                 <span class="greeting d-block">Hallo Admin,</span>
-                <span class="username">Aden S. Putra</span>
+                <span class="username">{{ Auth::user()->name }}</span>
             </div>
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center justify-content-center text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
@@ -21,9 +21,9 @@
                             <div class="d-flex justify-content-center">
                                 <div class="rounded-circle bg-secondary" style="width: 60px; height: 60px;"></div>
                             </div>
-                            <h5 class="logout-username">Aden S. Putra</h5>
-                            <p class="logout-email">Aden@gmail.com</p>
-                        </a>
+                            <h5 class="logout-username">{{ Auth::user()->name }}</h5>
+                            <p class="logout-email">{{ Auth::user()->email }}</p>
+                        </a>                        
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>

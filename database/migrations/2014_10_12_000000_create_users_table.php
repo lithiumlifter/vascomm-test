@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('no_telp')->unique();
             $table->string('password');
             $table->enum('role', ['customer', 'admin'])->default('customer');
-            $table->enum('status', ['pending', 'active'])->default('pending');
+            $table->enum('status', ['inactive', 'active'])->default('inactive');
             $table->timestamps();
         });
     }

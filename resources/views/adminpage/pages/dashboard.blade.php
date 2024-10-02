@@ -62,7 +62,7 @@
                             {{ $product->name }}
                         </td>
                         <td>{{ $product->created_at->format('d M Y') }}</td>
-                        <td class="bold">Rp {{ number_format($product->price, 0, ',', '.') }}</td>
+                        <td><strong>Rp {{ number_format($product->price, 0, ',', '.') }}</strong></td>
                     </tr>
                     @endforeach
                 </tbody>

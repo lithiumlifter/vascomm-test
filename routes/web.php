@@ -21,7 +21,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('landingpage');
 
 Route::get('/login', function(){
     return view('auth.login');

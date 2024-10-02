@@ -69,7 +69,7 @@
                 <div class="carousel-inner">
                     @foreach($products->chunk(5) as $key => $productChunk)
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                            <div class="row d-flex justify-content-evenly mt-8">
+                            <div class="row d-flex justify-content-center mt-8">
                                 @foreach($productChunk as $product)
                                     <div class="col-md-2">
                                         <div class="card card-product">
@@ -100,32 +100,30 @@
         </div>
     </section>
 
-
     {{-- produk tersedia --}}
     <section class="py-5 pl-5 pr-5">
-        <div class="container">
-            <h3 class="mb-4">Produk Tersedia</h3>
-            <div class="row d-flex justify-content-evenly">
-                @foreach($products as $product)
-                    <div class="col-md-2">
-                        <div class="card card-product">
-                            <div class="d-flex justify-content-center">
-                                <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top img-product" alt="{{ $product->name }}">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="product-title">{{ $product->name }}</h5>
-                                <p class="product-price">IDR {{ number_format($product->price, 0, ',', '.') }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <div class="text-center mt-4">
-                <button class="btn btn-outline-primary">Lihat Lebih Banyak</button>
-            </div>
-        </div>
+      <div class="container">
+          <h3 class="mb-4">Produk Tersedia</h3>
+          <div class="row d-flex justify-content-center">
+              @foreach($products->take(5) as $product) <!-- Limit to 5 products -->
+                  <div class="col-md-2">
+                      <div class="card card-product">
+                          <div class="d-flex justify-content-center">
+                              <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top img-product" alt="{{ $product->name }}">
+                          </div>
+                          <div class="card-body">
+                              <h5 class="product-title">{{ $product->name }}</h5>
+                              <p class="product-price">IDR {{ number_format($product->price, 0, ',', '.') }}</p>
+                          </div>
+                      </div>
+                  </div>
+              @endforeach
+          </div>
+          <div class="text-center mt-4">
+              <button class="btn btn-outline-primary">Lihat Lebih Banyak</button>
+          </div>
+      </div>
     </section>
-         
   </main>
 
   <footer class="text-center py-4">

@@ -1,5 +1,6 @@
 body {
     background-color: #f8f9fa;
+    padding-top: 80px;
 }
 
 .heading-text{
@@ -83,7 +84,7 @@ body {
 
 .navbar-brand img{
     width: 110px;
-    margin-left: 91px;
+    margin-left: 60px;
 }
 .navbar-toggler {
     border: none;
@@ -99,53 +100,60 @@ body {
     }
 }
 
-        .custom-card {
-            position: relative;
-            background: linear-gradient(to left, #C2D6FF, #ADC9FF);
-            border-radius: 16px;
-            padding: 20px;
-            color: #2c3e50;
-            text-align: left;
-            overflow: hidden; 
-            min-width: 260px;
-            min-height: 117px;
-        }
-
-        .custom-card::before, .custom-card::after {
-            content: "";
-            position: absolute;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-        }
-
-        .custom-card::before {
-            bottom: 0;
-            right: 0;
-            transform: translate(50%);
-        }
-
-        .custom-card::after {
-            bottom: 0;
-            right: 0;
-            transform: translate(30%, 30%);
-        }
-
-        .custom-card h5 {
-            font-size: 14px;
-            font-weight: 400;
-            color: #7b8a8b;
-            margin-bottom: 5px;
-        }
-        .custom-card .display-6 {
-            font-size: 28px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin: 0;
-        }
 .card{
     border: 0px;
+    background-color: transparent;
+}
+
+.card-table-large{
+    background-color: white;
+}
+
+.custom-card {
+    position: relative;
+    background: linear-gradient(to left, #C2D6FF, #ADC9FF);
+    border-radius: 16px;
+    padding: 20px;
+    color: #2c3e50;
+    text-align: left;
+    overflow: hidden; 
+    min-width: 260px;
+    min-height: 117px;
+    border: 0px;
+}
+
+.custom-card::before, .custom-card::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.custom-card::before {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%);
+}
+
+.custom-card::after {
+    bottom: 0;
+    right: 0;
+    transform: translate(30%, 30%);
+}
+
+.custom-card h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7b8a8b;
+    margin-bottom: 5px;
+}
+.custom-card .display-6 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
 }
 
 .card-column{
@@ -157,6 +165,8 @@ body {
     width: 784px;
     margin-left: 20px;
     margin-right: 20px;
+    border: 0px;
+    background-color: white;
 }
 
 .tb-title{

@@ -61,7 +61,7 @@
                         <label for="status">Status</label>
                         <select id="status" class="form-control @error('status') is-invalid @enderror" name="status" required>
                             <option value="active">Active</option>
-                            <option value="pending">Pending</option>
+                            <option value="inactive">inactive</option>
                         </select>
                         @error('status')
                         <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
         </div>
     </div>
 </div>
-<div class="card">
+<div class="card card-table-large">
     <div class="card-body">
         <table id="data-table" class="table table-striped">
             <thead>
@@ -107,7 +107,7 @@
                     <td>
                         <form action="{{ route('toggle-product-status', $product->id) }}" method="POST" style="display: inline;">
                             @csrf
-                            <button type="submit" class="icon-action text-white bg-success" title="Toggle Status">
+                            <button type="submit" class="icon-action text-white bg-primary" title="Toggle Status">
                                 <i class="fas fa-sync"></i>
                             </button>
                         </form>
@@ -177,7 +177,7 @@
                                         <label for="status-{{ $product->id }}">Status</label>
                                         <select id="status-{{ $product->id }}" class="form-control @error('status') is-invalid @enderror" name="status" required>
                                             <option value="active" {{ $product->status === 'active' ? 'selected' : '' }}>Active</option>
-                                            <option value="pending" {{ $product->status === 'pending' ? 'selected' : '' }}>Pending</option>
+                                            <option value="inactive" {{ $product->status === 'inactive' ? 'selected' : '' }}>inactive</option>
                                         </select>
                                         @error('status')
                                         <span class="invalid-feedback" role="alert">
