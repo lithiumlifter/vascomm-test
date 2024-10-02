@@ -92,8 +92,8 @@ main{
   }
 
 .card-product {
-    width: 183px;
-    height: 270px;
+    min-width: 183px;
+    min-height: 270px;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 0 !important;
@@ -183,4 +183,11 @@ footer p {
     background-color: #155bb5;
 
   } */
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+      background-color: black;
+      border-radius: 50%;
+  }
+  
   

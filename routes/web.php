@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,7 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/login', function(){
     return view('auth.login');
@@ -31,15 +30,17 @@ Route::get('/login', function(){
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
-    Route::resource('admin/manage-users', UserController::class)->names([
-        'index' => 'manage-user',
-        'create' => 'create-user',
-        'store' => 'store-user',
-        'show' => 'show-user',
-        'edit' => 'edit-user',
-        'update' => 'update-user',
-        'destroy' => 'delete-user',
-    ]);
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::resource('admin/manage-users', UserController::class)->names([
+            'index' => 'manage-user',
+            'create' => 'create-user',
+            'store' => 'store-user',
+            'show' => 'show-user',
+            'edit' => 'edit-user',
+            'update' => 'update-user',
+            'destroy' => 'delete-user',
+        ]);
+    });
 
     Route::resource('admin/manage-product', ProductController::class)->names([
         'index' => 'manage-product',
